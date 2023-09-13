@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="test.js"></script>
+</head>
+<body>
+    <script type="module">
+        import { doSomething, memoFinder, fibo, reverse, mostRepeated } from "./something.js";
+        doSomething('abc');
+        let finder = memoFinder();
+        finder(1)
+        finder(1000);
+        finder(999999);
+
+        let genFibo = fibo(100);
+        let result = genFibo.next();
+        while (!result.done) {
+            console.log(result.value);
+            result = genFibo.next();
+        }
+
+        console.log(reverse("This Is a Nice Sentence"));
+
+        console.log(mostRepeated(["a","b","c","b","c","b"]));
+    </script>
+</body>
+</html>
